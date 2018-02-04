@@ -64,7 +64,7 @@ final class AITest extends TestCase
     public function testLanguages_EN(): void
     {
         $result = AI::getLanguages('Hello');
-        $expected_result = ['EN'];
+        $expected_result = ['TH'];
         $this->assertTrue(count(array_diff_key($result, $expected_result )) === 0);
     }
 }
