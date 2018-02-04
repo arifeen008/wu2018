@@ -75,12 +75,15 @@ class AI
     public static function getLanguages($text)
     {
         $re = '/[ก-๛]+/u';
+        $reEn = '/[a-z]+/u';
         $result = [];
         preg_match_all($re, $text, $matches, PREG_SET_ORDER, 0);
+        
         if (!empty($matches)) {
             array_push($result, 'TH');
         }
-        else{
+        preg_match_all($reEn, $text, $matches, PREG_SET_ORDER, 0);
+        if(!empty($matches)){
             array_push($result, 'EN');
         }
         return $result;
